@@ -1,7 +1,6 @@
-package edu.upenn.cis350.lostandfound;
+package edu.upenn.cis350.lostandfoundpenn;
 
 import android.content.Context;
-
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -22,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("edu.upenn.cis350.lostandfound", appContext.getPackageName());
+        assertEquals("edu.upenn.cis350.lostandfoundpenn", appContext.getPackageName());
     }
 }

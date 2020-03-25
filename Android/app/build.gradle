@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "edu.upenn.cis350.lostandfound"
+        applicationId "edu.upenn.cis350.lostandfoundpenn"
         minSdkVersion 28
         targetSdkVersion 29
         versionCode 1

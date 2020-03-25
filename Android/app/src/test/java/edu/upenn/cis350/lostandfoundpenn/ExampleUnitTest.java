@@ -1,4 +1,4 @@
-package edu.upenn.cis350.lostandfound;
+package edu.upenn.cis350.lostandfoundpenn;
 
 import org.junit.Test;
 
