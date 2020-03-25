@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SearchFragment">
+
+    <Button
+        android:id="@+id/searchItemButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Item"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toStartOf="@+id/searchLocationButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/glTop" />
+
+    <Button
+        android:id="@+id/searchLocationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchItemButton"
+        app:layout_constraintTop_toTopOf="@+id/glTop" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_by_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toStartOf="@+id/searchItemButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toTopOf="@+id/glTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/searchBarHintText"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintBottom_toTopOf="@id/glSearchButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

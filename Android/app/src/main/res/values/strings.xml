@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LostAndFound@Penn</string>
+
+    <string name="blank">Hello blank fragment</string>
+
+    <string name="search_by_text">Search By:  </string>
+    <string name="searchBarHintText">Choose Search Mode</string>
 </resources>
