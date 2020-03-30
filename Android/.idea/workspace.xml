@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="253b796d-5c04-44d2-ac3d-b48a259b2b65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +24,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -33,29 +36,21 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_rvadapter.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-              <folding>
-                <element signature="e#533#551#0" expanded="true" />
-                <element signature="e#993#1010#0" expanded="true" />
-              </folding>
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            <state relative-caret-position="13">
+              <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#1609#1610#0" expanded="true" />
-                <element signature="e#1636#1637#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,15 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Fragments/SearchFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
+            <state relative-caret-position="630">
               <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-              <folding>
-                <element signature="e#1892#2222#0" expanded="true" />
-                <element signature="e#2273#2603#0" expanded="true" />
-                <element signature="e#2602#2603#0" expanded="true" />
-                <element signature="e#1759#1760#0" expanded="true" />
-                <element signature="e#1803#1804#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,40 +68,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Data/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="413">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
               <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-              <folding>
-                <element signature="e#3210#3230#0" expanded="true" />
-                <element signature="e#3642#3666#0" expanded="true" />
-              </folding>
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -167,6 +145,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -237,8 +217,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -246,6 +224,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-25T04:39:05.704Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -341,7 +320,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="827" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
@@ -351,14 +330,14 @@
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Resources Explorer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.3297568" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.33404863" />
       <window_info id="Captures" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="0" weight="0.3299363" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.3299363" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.3292517" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.3299363" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3299363" />
@@ -373,20 +352,20 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_report.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.viewpager/viewpager/1.0.0/db045f92188b9d247d5f556866f8861ab68528f0/viewpager-1.0.0-sources.jar!/androidx/viewpager/widget/PagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -433,17 +412,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_rvadapter.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding>
-            <element signature="e#533#551#0" expanded="true" />
-            <element signature="e#993#1010#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Fragments/SearchFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -452,63 +442,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Data/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-          <folding>
-            <element signature="e#3210#3230#0" expanded="true" />
-            <element signature="e#3642#3666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_rvadapter.xml">
       <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Fragments/SearchFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-          <folding>
-            <element signature="e#1892#2222#0" expanded="true" />
-            <element signature="e#2273#2603#0" expanded="true" />
-            <element signature="e#2602#2603#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-          </folding>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        <state relative-caret-position="13">
+          <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
           </folding>
         </state>
       </provider>
