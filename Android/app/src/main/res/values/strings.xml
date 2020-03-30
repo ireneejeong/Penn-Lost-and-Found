@@ -6,6 +6,9 @@
     <string name="search_by_text">Search By:  </string>
     <string name="searchBarHintText">Choose Search Mode</string>
 
+    <!-- SEARCH SWITCH BUTTONS -->
+    <string name="searchItem">Item</string>
+    <string name="searchLocation">Location</string>
     <!-- SEARCH RECYCLER VIEW ITEM -->
     <string name="itemName">Mac Pro 15</string>
     <string name="itemLoc">Towne 100</string>

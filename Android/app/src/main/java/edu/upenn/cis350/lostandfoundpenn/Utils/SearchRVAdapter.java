@@ -10,20 +10,27 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
+import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
 import edu.upenn.cis350.lostandfoundpenn.R;
 
-public class SearchRVAdapter extends RecyclerView.Adapter<SearchRVAdapter.Holder> {
+public class SearchRVAdapter
+        extends RecyclerView.Adapter<SearchRVAdapter.Holder>
+        implements Filterable {
 
-
+    private ArrayList<Item> mPermantData = new ArrayList<>();
     private ArrayList<Item> mData = null;
 
 
     public SearchRVAdapter(Context context, ArrayList<Item> items) {
+        mPermantData.addAll(items);
         mData = items;
     }
 
@@ -49,6 +56,60 @@ public class SearchRVAdapter extends RecyclerView.Adapter<SearchRVAdapter.Holder
     public int getItemCount() {
         return mData.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<Item> filteredList = new ArrayList<>();
+
+            // default
+            if (charSequence == null || charSequence.length() == 0) {
+                filteredList.addAll(mPermantData);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (Item item : mPermantData) {
+                    if (!(SearchFragment.searchByItem ^ SearchFragment.searchByLocation)) {
+                        if (item.getName().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                        if (item.getLocation().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+                    else if (SearchFragment.searchByItem) {
+                        if (item.getName().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+                    else {
+                        if (item.getLocation().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            mData.clear();
+            mData.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     class Holder extends RecyclerView.ViewHolder{
 

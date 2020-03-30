@@ -8,12 +8,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.SearchView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +27,13 @@ import edu.upenn.cis350.lostandfoundpenn.R;
 import edu.upenn.cis350.lostandfoundpenn.Utils.SearchRVAdapter;
 
 public class SearchFragment extends Fragment {
+
+    private ArrayList<Item> mItemList = new ArrayList<>();
+    private TextWatcher searchText = null;
+    private SearchRVAdapter adapter;
+    public static boolean searchByItem = true;
+    public static boolean searchByLocation = false;
+
     public SearchFragment() {
         // Required empty public constructor
     }
@@ -38,11 +49,48 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         // Instantiate Buttons
-        Button mItemButton = view.findViewById(R.id.searchItemButton);
-        Button mLocButton = view.findViewById(R.id.searchLocationButton);
+//        Button mItemButton = view.findViewById(R.id.searchItemButton);
+//
+//        Button mLocButton = view.findViewById(R.id.searchLocationButton);
+        Switch mItemSwitch = view.findViewById(R.id.switchItem);
+        Switch mLocationSwitch = view.findViewById(R.id.switchLocation);
+
+        mItemSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean on) {
+                if (on) {
+                    searchByItem = true;
+                } else {
+                    searchByItem = false;
+                }
+            }
+        });
+
+        mLocationSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean on) {
+                if (on) {
+                    searchByLocation = true;
+                } else {
+                    searchByLocation = false;
+                }
+            }
+        });
 
         // Instantiate SearchView
         SearchView mSearchView = view.findViewById(R.id.searchView);
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
 
         // Fetch list of items/locations from database
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
@@ -54,6 +102,8 @@ public class SearchFragment extends Fragment {
     private ArrayList<Item> loadItemData() {
 
         // TODO
+
+        // fetch list from server and save it into mItemList
 
         ArrayList<Item> temp = new ArrayList<>();
         temp.add(new Item("Mac Pro 15", "Towne 100"));
@@ -77,12 +127,21 @@ public class SearchFragment extends Fragment {
     private void updateRecyclerView(Context context, RecyclerView view) {
         // add recyclerView
         ArrayList<Item> data = loadItemData();
-        SearchRVAdapter adapter = new SearchRVAdapter(context, data);
+        adapter = new SearchRVAdapter(context, data);
         view.setAdapter(adapter);
 
         // add layoutManager
         view.setLayoutManager(new LinearLayoutManager(context));
         view.setHasFixedSize(true);
+    }
+
+
+    private void itemSearch() {
+
+    }
+
+    private void locationSearch() {
+
     }
 
 }
