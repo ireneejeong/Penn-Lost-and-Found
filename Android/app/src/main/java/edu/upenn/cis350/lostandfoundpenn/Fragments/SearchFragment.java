@@ -1,9 +1,12 @@
 package edu.upenn.cis350.lostandfoundpenn.Fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +16,11 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import edu.upenn.cis350.lostandfoundpenn.Data.Item;
 import edu.upenn.cis350.lostandfoundpenn.R;
+import edu.upenn.cis350.lostandfoundpenn.Utils.SearchRVAdapter;
 
 public class SearchFragment extends Fragment {
     public SearchFragment() {
@@ -38,7 +45,44 @@ public class SearchFragment extends Fragment {
         SearchView mSearchView = view.findViewById(R.id.searchView);
 
         // Fetch list of items/locations from database
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        updateRecyclerView(this.getContext(), recyclerView);
+    }
+
+
+    // Receive item data from the server
+    private ArrayList<Item> loadItemData() {
+
         // TODO
+
+        ArrayList<Item> temp = new ArrayList<>();
+        temp.add(new Item("Mac Pro 15", "Towne 100"));
+        temp.add(new Item("AirPod Pro", "Towne 217"));
+        temp.add(new Item("Nintendo Switch", "SKIR AUD"));
+        temp.add(new Item("Chicken Fried Rice", "JMHH 100"));
+        temp.add(new Item("LG Gram", "MOOR 105"));
+        temp.add(new Item("GALAXY Note 10", "LEV AUD"));
+        temp.add(new Item("Super Mario", "SIG LAB"));
+        temp.add(new Item("Mac AIR 15", "Towne 100"));
+        temp.add(new Item("AirPod 2", "Towne 217"));
+        temp.add(new Item("Nintendo GOLD", "SKIR AUD"));
+        temp.add(new Item("Psy", "JMHH 100"));
+        temp.add(new Item("IU", "MOOR 105"));
+        temp.add(new Item("Tae-yeon", "LEV AUD"));
+        temp.add(new Item("BTS", "SIG LAB"));
+
+        return temp;
+    }
+
+    private void updateRecyclerView(Context context, RecyclerView view) {
+        // add recyclerView
+        ArrayList<Item> data = loadItemData();
+        SearchRVAdapter adapter = new SearchRVAdapter(context, data);
+        view.setAdapter(adapter);
+
+        // add layoutManager
+        view.setLayoutManager(new LinearLayoutManager(context));
+        view.setHasFixedSize(true);
     }
 
 }
