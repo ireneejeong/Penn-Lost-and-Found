@@ -27,8 +27,7 @@ public class SearchRVAdapter
 
     private ArrayList<Item> mPermantData = new ArrayList<>();
     private ArrayList<Item> mData = null;
-
-
+    
     public SearchRVAdapter(Context context, ArrayList<Item> items) {
         mPermantData.addAll(items);
         mData = items;
