@@ -1,0 +1,52 @@
+ <style type="text/css">
+ .editbox {
+        text-weight:bold;
+        text-align: center;
+        padding: 15px;
+        border: 2px solid black;
+        background-color: rgb(230, 230, 300);
+        margin-bottom: 5px;
+        color: black;
+    }
+.button {
+    font-size: 12px;
+    width: auto;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    }
+ 
+</style>
+
+<html>
+
+UPENN LOST&FOUND
+<p> 
+Sign up to become an administrator! 
+<p>
+
+<form action="/signup" method="post">
+
+<input class="editbox" name="name" placeholder="Username">
+<p>
+<input class="editbox" name="password" placeholder="Password"> 
+<p>
+(Password must be 8-16 characters long with at least one uppercase, lowercase, and a number)
+<p>
+<input class="editbox" name="email" placeholder="Email">
+<p>
+
+<input class="button" type="submit" value="Submit form!">
+
+</form>
+
+<a href="/public/login.html">Go Back to Log in </a><br>
+
+
+</html>
