@@ -2,6 +2,7 @@ package edu.upenn.cis350.lostandfoundpenn.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import edu.upenn.cis350.lostandfoundpenn.Activities.ClaimActivity;
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
 import edu.upenn.cis350.lostandfoundpenn.R;
 import edu.upenn.cis350.lostandfoundpenn.Utils.SearchRVAdapter;
@@ -47,6 +49,11 @@ public class SearchFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
+
+
+
+
 
         // Instantiate Buttons
 //        Button mItemButton = view.findViewById(R.id.searchItemButton);
@@ -98,6 +105,9 @@ public class SearchFragment extends Fragment {
     }
 
 
+
+
+
     // Receive item data from the server
     private ArrayList<Item> loadItemData() {
 
@@ -106,20 +116,20 @@ public class SearchFragment extends Fragment {
         // fetch list from server and save it into mItemList
 
         ArrayList<Item> temp = new ArrayList<>();
-        temp.add(new Item("Mac Pro 15", "Towne 100"));
-        temp.add(new Item("AirPod Pro", "Towne 217"));
-        temp.add(new Item("Nintendo Switch", "SKIR AUD"));
-        temp.add(new Item("Chicken Fried Rice", "JMHH 100"));
-        temp.add(new Item("LG Gram", "MOOR 105"));
-        temp.add(new Item("GALAXY Note 10", "LEV AUD"));
-        temp.add(new Item("Super Mario", "SIG LAB"));
-        temp.add(new Item("Mac AIR 15", "Towne 100"));
-        temp.add(new Item("AirPod 2", "Towne 217"));
-        temp.add(new Item("Nintendo GOLD", "SKIR AUD"));
-        temp.add(new Item("Psy", "JMHH 100"));
-        temp.add(new Item("IU", "MOOR 105"));
-        temp.add(new Item("Tae-yeon", "LEV AUD"));
-        temp.add(new Item("BTS", "SIG LAB"));
+        temp.add(new Item("Mac Pro 15", "Towne 100", "waitingFound"));
+        temp.add(new Item("AirPod Pro", "Towne 217", "waitingFound"));
+        temp.add(new Item("Nintendo Switch", "SKIR AUD", "waitingFound"));
+        temp.add(new Item("Chicken Fried Rice", "JMHH 100", "waitingFound"));
+        temp.add(new Item("LG Gram", "MOOR 105", "waitingFound"));
+        temp.add(new Item("GALAXY Note 10", "LEV AUD", "waitingFound"));
+        temp.add(new Item("Super Mario", "SIG LAB", "waitingFound"));
+        temp.add(new Item("Mac AIR 15", "Towne 100", "waitingFound"));
+        temp.add(new Item("AirPod 2", "Towne 217", "waitingFound"));
+        temp.add(new Item("Nintendo GOLD", "SKIR AUD", "waitingFound"));
+        temp.add(new Item("Psy", "JMHH 100", "waitingFound"));
+        temp.add(new Item("IU", "MOOR 105", "waitingFound"));
+        temp.add(new Item("Tae-yeon", "LEV AUD", "waitingFound"));
+        temp.add(new Item("BTS", "SIG LAB", "waitingFound"));
 
         return temp;
     }
@@ -143,5 +153,6 @@ public class SearchFragment extends Fragment {
     private void locationSearch() {
 
     }
+
 
 }

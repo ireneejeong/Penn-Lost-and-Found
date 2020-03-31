@@ -3,14 +3,18 @@ package edu.upenn.cis350.lostandfoundpenn;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.TableLayout;
 
 import com.google.android.material.tabs.TabLayout;
 
+
 import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
+
 import edu.upenn.cis350.lostandfoundpenn.Utils.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create Tab-layout
         createTabs();
+
+
 
     }
 

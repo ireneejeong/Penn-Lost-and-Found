@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.upenn.cis350.lostandfoundpenn.Activities.ClaimActivity;
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
+import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
 import edu.upenn.cis350.lostandfoundpenn.R;
 
@@ -27,11 +33,19 @@ public class SearchRVAdapter
 
     private ArrayList<Item> mPermantData = new ArrayList<>();
     private ArrayList<Item> mData = null;
+    private Context mContext;
+
     
     public SearchRVAdapter(Context context, ArrayList<Item> items) {
         mPermantData.addAll(items);
         mData = items;
+        mContext = context;
+
     }
+
+
+
+
 
     @NonNull
     @Override
@@ -110,22 +124,59 @@ public class SearchRVAdapter
         }
     };
 
-    class Holder extends RecyclerView.ViewHolder{
+
+
+
+    class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView itemName;
         TextView itemLoc;
+        Button claimButton;
+
 
         public Holder(View view) {
             super(view);
 
             itemName = view.findViewById(R.id.itemName);
             itemLoc = view.findViewById(R.id.itemLocation);
+            claimButton = (Button) view.findViewById(R.id.claimButton);
+            claimButton.setOnClickListener(this);
+
+
+
         }
 
         public void bind(Item item) {
             itemName.setText(item.getName());
             itemLoc.setText(item.getLocation());
+            claimButton.setText("claim");
+
         }
 
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(mContext, ClaimActivity.class);
+            Item item = mPermantData.get(getAdapterPosition());
+            Log.d("Status", item.status);
+            if (item.getStatus().equals("waitingFound")) {
+                String[] arr = new String[3];
+                arr[0] = item.getName();
+                arr[1] = item.getLocation();
+                arr[2] = item.getStatus();
+                intent.putExtra("item", arr);
+                item.status = "waitingClaim";
+                Log.d("Status", item.status);
+                mContext.startActivity(intent);
+            }
+            else if (item.status.equals("waitingClaim")) {
+                Toast.makeText(mContext, "This item is already claimed by another user!",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
+
+
+
+
 }
