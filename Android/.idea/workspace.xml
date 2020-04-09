@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66749a35-1f80-492f-85df-f44a5ff37d47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,6 +55,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="sisabel" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="cis350" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="350S20-27" />
   </component>
   <component name="ProjectId" id="1aJ8afqyjfSu82xWd1IJ7z2afwH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -156,6 +159,14 @@
       <option name="presentableId" value="Default" />
       <updated>1585105018440</updated>
     </task>
+    <task id="LOCAL-00001" summary="iter1 node">
+      <created>1586443286122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586443286122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,5 +179,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="iter1 node" />
+    <option name="LAST_COMMIT_MESSAGE" value="iter1 node" />
   </component>
 </project>
