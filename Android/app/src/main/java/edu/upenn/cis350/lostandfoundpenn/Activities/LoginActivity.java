@@ -1,57 +1,41 @@
-package edu.upenn.cis350.lostandfoundpenn;
+package edu.upenn.cis350.lostandfoundpenn.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TabHost;
-import android.widget.TableLayout;
 import android.widget.Toast;
-
-import com.google.android.material.tabs.TabLayout;
-
 
 import java.net.URL;
 
-import edu.upenn.cis350.lostandfoundpenn.Activities.SignupActivity;
-import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
-import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
+import edu.upenn.cis350.lostandfoundpenn.GetWebTask;
+import edu.upenn.cis350.lostandfoundpenn.MainActivity;
+import edu.upenn.cis350.lostandfoundpenn.R;
 
-import edu.upenn.cis350.lostandfoundpenn.Utils.ViewPagerAdapter;
-
-public class MainActivity extends AppCompatActivity {
-
+public class LoginActivity extends AppCompatActivity {
     public static final int STARTCLICK_ID = 1;
     EditText emailEditText;
     EditText passwordEditText;
     ProgressBar loadingProgressBar;
 
-    private ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final Button signupButton = findViewById(R.id.signup);
         loadingProgressBar = findViewById(R.id.loading);
-
-        boolean isRegistered = true; // TODO: Fetch registered state from db
-
-        if (!isRegistered) {
-            // TODO : GO TO REGISTER ACTIVITY
-        }
-        // Create Tab-layout
-        //createTabs();
-
     }
 
     public String getPassword(String email) {
@@ -102,17 +86,4 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(i, STARTCLICK_ID);
     }
 
-
-    private void createTabs() {
-        // Create Tabs
-        adapter.addFragment(new ReportFragment(), "Report");
-        adapter.addFragment(new SearchFragment(), "Search");
-
-        // Link Fragments with ViewPager
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        TabLayout tabLayout = findViewById(R.id.tabs);
-
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
-    }
 }
