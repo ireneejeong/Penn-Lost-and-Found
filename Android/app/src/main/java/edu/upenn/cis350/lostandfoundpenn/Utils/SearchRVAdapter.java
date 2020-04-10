@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.upenn.cis350.lostandfoundpenn.Activities.ClaimActivity;
+import edu.upenn.cis350.lostandfoundpenn.Activities.UserReportActivity;
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
@@ -172,6 +174,32 @@ public class SearchRVAdapter
             else if (item.status.equals("waitingClaim")) {
                 Toast.makeText(mContext, "This item is already claimed by another user!",
                         Toast.LENGTH_LONG).show();
+
+
+
+
+                new AsyncTask<String, String, String>() {
+                    protected String doInBackground(String...inputs) {
+                        try {
+                            Thread.sleep(3000);
+                        } catch (Exception e) { }
+                        return null;
+                    }
+
+                    protected void onPostExecute(String input) {
+
+                        Intent i = new Intent(mContext, UserReportActivity.class);
+                        Item item1 = mPermantData.get(getAdapterPosition());
+                        String[] arr = new String[3];
+                        arr[0] = item1.getName();
+                        arr[1] = item1.getLocation();
+                        arr[2] = item1.getStatus();
+                        Log.d("Name", arr[0]);
+                        i.putExtra("item", arr);
+                        mContext.startActivity(i);
+                    }
+
+                }.execute();
             }
         }
     }
