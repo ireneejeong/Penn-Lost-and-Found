@@ -72,6 +72,7 @@ public class SignupActivity extends AppCompatActivity{
                 fullURL += "email=" + email;
                 fullURL += "&pw=" + pw;
                 fullURL += "&contact=" + contact;
+                fullURL += "&points=" + 0;
 
                 URL url = new URL(fullURL);
                 PostWebTask task = new PostWebTask();
