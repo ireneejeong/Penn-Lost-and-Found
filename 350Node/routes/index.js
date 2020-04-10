@@ -1,4 +1,5 @@
 // set up Express
+
 var express = require('express');
 var app = express();
 
@@ -20,9 +21,9 @@ var itemDBRoutes = require('./itemRoutes.js');
 // import the Item class from Item.js
 var Item = require('./Item.js');
 
-//
 var Admin = require('./Admin.js');
 var User = require('./User.js');
+var Claim = require('./Claim.js');
 
 /***************************************/
 
@@ -72,6 +73,35 @@ app.use('/signup', (req, res) => {
 				}); 
 			}
 		}
+    });
+});
+
+app.use('/claimItem', (req, res) => {
+    var newClaim = new Claim ({
+        name: req.query.name,
+        location: req.query.location,
+        status: req.query.status,
+        userID: req.query.userID,
+        contactInfo: req.query.contactInfo,
+        description: req.query.description
+
+    });
+
+    Claim.exists ( {name: newClaim.name}, function(err) {
+        if (err) {
+            res.write('uh oh: ' + err);
+            console.log(err);
+            res.end();
+        } else {
+            newClaim.save( (err) => {
+                if (err) {
+                    res.send('uh oh: ' + err);
+                }
+                else {
+                    res.send('Successfully claimed!');
+                }
+            });
+        }
     });
 });
 
