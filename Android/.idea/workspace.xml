@@ -9,6 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="253b796d-5c04-44d2-ac3d-b48a259b2b65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -26,6 +27,10 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Utils/SearchRVAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_claim.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_claim.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_rvadapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_rvadapter.xml" afterDir="false" />
+=======
+    <list default="true" id="66749a35-1f80-492f-85df-f44a5ff37d47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,17 +38,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LostAndFound@Penn" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -165,6 +183,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -173,6 +193,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+<<<<<<< HEAD
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -193,15 +214,31 @@
         <option value="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/ClaimActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
+=======
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master2" />
+      </map>
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="75" />
     <option name="y" value="49" />
     <option name="width" value="1440" />
     <option name="height" value="824" />
+=======
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="sisabel" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="cis350" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="350S20-27" />
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
   </component>
+  <component name="ProjectId" id="1aJ8afqyjfSu82xWd1IJ7z2afwH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -213,6 +250,8 @@
       <pane id="AndroidView" />
     </panes>
   </component>
+=======
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-25T04:39:05.704Z" />
@@ -266,8 +305,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -310,14 +347,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="253b796d-5c04-44d2-ac3d-b48a259b2b65" name="Default Changelist" comment="" />
+      <changelist id="66749a35-1f80-492f-85df-f44a5ff37d47" name="Default Changelist" comment="" />
       <created>1585105018440</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585105018440</updated>
     </task>
+    <task id="LOCAL-00001" summary="iter1 node">
+      <created>1586443286122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586443286122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="75" y="49" width="1440" height="824" extended-state="0" />
     <editor active="true" />
@@ -537,5 +583,21 @@
         </state>
       </provider>
     </entry>
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="iter1 node" />
+    <option name="LAST_COMMIT_MESSAGE" value="iter1 node" />
+>>>>>>> 702fcc18d144141d93a497dd024661a0d43bb8aa
   </component>
 </project>
