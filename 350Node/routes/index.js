@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 
 var mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);
 mongoose.connect('mongodb+srv://sisabel:pleasework@cis350cluster-n7ht0.mongodb.net/lostItems?retryWrites=true&w=majority', { useNewUrlParser: true });
 
 // set up EJS
@@ -31,6 +32,93 @@ var Claim = require('./Claim.js');
 app.get('/addItem', itemDBRoutes.addItem);
 app.get('/showItemsDB', itemDBRoutes.showItemsDB);
 app.get('/removeAll', itemDBRoutes.removeAll);
+
+// add points to user profile
+app.use('/addPoints', (req, res) => {
+    var author = req.query.author;
+    var points = req.query.points;
+
+    User.findOneAndUpdate( { "email" : author }, { $inc: { "points" : points } }, { new: true }, function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+app.use('/claimItem', (req, res) => {
+    var newClaim = new Claim ({
+        name: req.query.name,
+        location: req.query.location,
+        status: req.query.status,
+        userID: req.query.userID,
+        contactInfo: req.query.contactInfo,
+        description: req.query.description
+
+    });
+
+    Claim.exists ( {name: newClaim.name}, function(err) {
+        if (err) {
+            res.write('uh oh: ' + err);
+            console.log(err);
+            res.end();
+        } else {
+            newClaim.save( (err) => {
+                if (err) {
+                    res.send('uh oh: ' + err);
+                }
+                else {
+                    res.send('Successfully claimed!');
+                }
+            });
+        }
+    });
+});
+
+// -- MOBILE --
+app.use('/adduser', (req, res) => {
+	var newUser = new User ({
+		email: req.query.email,
+		password: req.query.pw,
+		contact: req.query.contact,
+		points: req.query.points
+	});
+
+	User.exists ( {email: newUser.email}, function(err, user) {
+		if (err) {
+		    res.write('uh oh: ' + err);
+		    console.log(err);
+		    res.end();
+		} else if (user) {
+			res.send('User already exists');
+		} else {
+			newUser.save( (err) => {
+				if (err) {
+				    res.send('uh oh: ' + err);
+				}
+				else {
+					res.send('Correctly signed up!');
+				}
+			});
+		}
+    });
+});
+
+// -- MOBILE --
+app.use('/getuser', (req, res) => {
+	User.findOne( { email: req.query.email}, (err, user) => {
+		if (err){
+		    console.log('uh oh' + err);
+		    res.send(err);
+		} else if (user){
+			res.send(user);
+		} else {
+			res.send('Information is not correct');
+		}
+	});
+});
 
 
 // -- WEB -- 
@@ -76,35 +164,6 @@ app.use('/signup', (req, res) => {
     });
 });
 
-app.use('/claimItem', (req, res) => {
-    var newClaim = new Claim ({
-        name: req.query.name,
-        location: req.query.location,
-        status: req.query.status,
-        userID: req.query.userID,
-        contactInfo: req.query.contactInfo,
-        description: req.query.description
-
-    });
-
-    Claim.exists ( {name: newClaim.name}, function(err) {
-        if (err) {
-            res.write('uh oh: ' + err);
-            console.log(err);
-            res.end();
-        } else {
-            newClaim.save( (err) => {
-                if (err) {
-                    res.send('uh oh: ' + err);
-                }
-                else {
-                    res.send('Successfully claimed!');
-                }
-            });
-        }
-    });
-});
-
 // -- WEB --
 app.use('/login', (req, res) => {
 	Admin.findOne( { name: req.body.name}, (err, user) => {
@@ -119,48 +178,6 @@ app.use('/login', (req, res) => {
 			res.send('Password Incorrect');
 		}
 	});
-});
-
-// -- MOBILE -- 
-app.use('/adduser', (req, res) => {
-	var newUser = new User ({
-		email: req.query.email,
-		password: req.query.pw,
-		contact: req.query.contact
-	});
-	
-	User.exists ( {email: newUser.email}, function(err, user) {
-		if (err) {
-		    res.write('uh oh: ' + err);
-		    console.log(err);
-		    res.end();
-		} else if (user) {
-			res.send('User already exists');
-		} else {
-			newUser.save( (err) => { 
-				if (err) {
-				    res.send('uh oh: ' + err);
-				} 
-				else {
-					res.send('Correctly signed up!');
-				}
-			}); 
-		}
-    });
-});
-
-// -- MOBILE -- 
-app.use('/getuser', (req, res) => {
-	User.findOne( { email: req.query.email}, (err, user) => {
-		if (err){
-		    console.log('uh oh' + err);
-		    res.send(err);
-		} else if (user){
-			res.send(user);
-		} else {
-			res.send('Information is not correct');
-		}
-	}); 
 });
 
 
