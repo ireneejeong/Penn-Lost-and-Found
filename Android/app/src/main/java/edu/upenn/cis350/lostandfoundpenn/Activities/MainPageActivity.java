@@ -31,6 +31,10 @@ public class MainPageActivity extends AppCompatActivity {
         Intent i = getIntent();
         loggedInUser = i.getStringExtra("id");
 
+        if (loggedInUser == null) {
+            loggedInUser = i.getStringExtra("loggedInUser");
+        }
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
@@ -46,18 +50,23 @@ public class MainPageActivity extends AppCompatActivity {
         return true;
     }
 
+    // Toolbar menu options
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.mainPage:
+                return true;
             case R.id.profile:
                 Intent profileIntent = new Intent(this, UserProfile.class);
                 profileIntent.putExtra("loggedInUser", loggedInUser);
                 startActivity(profileIntent);
 
                 return true;
-
+            /*
             case R.id.reportedItems:
                 return true;
+
+             */
             case R.id.logoutMenu:
                 Intent logoutIntent = new Intent(this, MainActivity.class);
                 startActivity(logoutIntent);

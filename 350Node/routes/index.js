@@ -183,6 +183,10 @@ app.use('/login', (req, res) => {
 
 // WEB MAIN PAGE
 app.use('/main', (req, res) => { res.redirect('/public/main.html'); } );
+app.use('/listOfUsers', (req, res) => { res.redirect('/public/listOfUsers.html'); });
+app.use('/reportedItems', (req, res) => { res.redirect('/public/reportedItems.html'); });
+app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
+
 
 
 
