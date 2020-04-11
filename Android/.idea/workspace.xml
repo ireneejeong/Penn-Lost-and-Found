@@ -988,7 +988,9 @@
       <change afterPath="$PROJECT_DIR$/../350Node/node_modules/vary/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../350Node/node_modules/vary/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../350Node/node_modules/vary/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../350Node/public/listOfUsers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../350Node/public/mapView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../350Node/public/reportedItems.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/.idea/codeStyles/Project.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/.idea/gradle.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
@@ -996,27 +998,15 @@
       <change afterPath="$PROJECT_DIR$/app/.idea/runConfigurations.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/MainPageActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_items.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../350Node/routes/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../350Node/routes/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_userprofile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../350Node/public/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../350Node/public/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../350Node/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../350Node/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../350Node/views/all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../350Node/views/all.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/ClaimActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/ClaimActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/SignupActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Fragments/ReportFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Fragments/ReportFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/MainPageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/MainPageActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/upenn/cis350/lostandfoundpenn/Activities/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_items.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1057,6 +1047,7 @@
         <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -1068,11 +1059,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="y" value="23" />
-    <option name="width" value="1334" />
-    <option name="height" value="773" />
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="cis350" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="350S20-27" />
   </component>
   <component name="ProjectId" id="1aLpXuvUVw6o91uWlwfdN6ZUMbF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -1081,7 +1071,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1166,6 +1161,14 @@
       <option name="presentableId" value="Default" />
       <updated>1586488869836</updated>
     </task>
+    <task id="LOCAL-00001" summary="iter2 -isabel">
+      <created>1586528469314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586528469316</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1173,10 +1176,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="iter2 -isabel" />
+    <option name="LAST_COMMIT_MESSAGE" value="iter2 -isabel" />
   </component>
 </project>

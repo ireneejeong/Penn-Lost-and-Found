@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Activities.UserProfile"></activity>
         <activity android:name=".Activities.MainPageActivity"></activity>
         <activity android:name=".Activities.ClaimActivity"></activity>
         <activity android:name=".Utils.SearchRVAdapter" />
