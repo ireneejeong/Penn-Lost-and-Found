@@ -27,10 +27,6 @@ public class ClaimActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(edu.upenn.cis350.lostandfoundpenn.R.layout.activity_claim);
-
-
-
-
     }
 
     private void saveInfo() {

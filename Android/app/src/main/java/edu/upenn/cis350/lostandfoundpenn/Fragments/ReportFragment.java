@@ -34,13 +34,13 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
     protected EditText itemL;
 
 
-    public ReportFragment() {
+    public ReportFragment(String user) {
         // Required empty public constructor
         itemTitle = "";
         itemDescription = "";
         itemDate = "";
         itemLocation = "";
-        author = "";
+        author = user;
     }
 
     private void addItem() {
@@ -57,7 +57,6 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
         itemLocation = itemL.getText().toString().toLowerCase();
 
         // username of currently logged in User
-        author = "sisabel";
 
         if (itemTitle == null || itemTitle.equals("")) {
             // rejected due to empty Title field
@@ -87,8 +86,16 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
                 fullURL += "&isFound=" + false;
 
                 URL url = new URL(fullURL);
+
+                // UPDATE USER POINTS
+                String url2 = "http://10.0.2.2:3000/addPoints?author=" + author + "&points=1";
+                URL addPointsURL = new URL(url2);
+
                 AccessWebTask task = new AccessWebTask();
                 task.execute(url);
+
+                AccessWebTask task2 = new AccessWebTask();
+                task2.execute(addPointsURL);
 
                 String resultMessage = task.get();
                 Toast.makeText(getActivity(), resultMessage, Toast.LENGTH_LONG).show();

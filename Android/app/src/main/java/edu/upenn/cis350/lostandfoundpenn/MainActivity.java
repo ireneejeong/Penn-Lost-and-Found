@@ -18,6 +18,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.net.URL;
 
+import edu.upenn.cis350.lostandfoundpenn.Activities.MainPageActivity;
 import edu.upenn.cis350.lostandfoundpenn.Activities.SignupActivity;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
@@ -31,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     EditText passwordEditText;
     ProgressBar loadingProgressBar;
 
-    private ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +42,6 @@ public class MainActivity extends AppCompatActivity {
         final Button loginButton = findViewById(R.id.login);
         final Button signupButton = findViewById(R.id.signup);
         loadingProgressBar = findViewById(R.id.loading);
-
-        boolean isRegistered = true; // TODO: Fetch registered state from db
-
-        if (!isRegistered) {
-            // TODO : GO TO REGISTER ACTIVITY
-        }
-        // Create Tab-layout
-        //createTabs();
-
     }
 
     public String getPassword(String email) {
@@ -90,29 +80,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     public void goToSignup(View view) {
         Intent i = new Intent(this, SignupActivity.class);
         startActivityForResult(i, STARTCLICK_ID);
     }
 
     public void gotoMain() {
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("id", emailEditText.toString());
+        Intent i = new Intent(this, MainPageActivity.class);
+        i.putExtra("id", emailEditText.getText().toString());
         startActivityForResult(i, STARTCLICK_ID);
     }
 
-
-    private void createTabs() {
-        // Create Tabs
-        adapter.addFragment(new ReportFragment(), "Report");
-        adapter.addFragment(new SearchFragment(), "Search");
-
-        // Link Fragments with ViewPager
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        TabLayout tabLayout = findViewById(R.id.tabs);
-
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+    // disable back button
+    public void onBackPressed() {
+        //do nothing
     }
 }
