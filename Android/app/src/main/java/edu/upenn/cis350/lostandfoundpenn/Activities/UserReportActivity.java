@@ -2,31 +2,28 @@ package edu.upenn.cis350.lostandfoundpenn.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
-import android.view.*;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.*;
-import android.os.*;
-import android.content.*;
-import java.net.*;
+import android.widget.Toast;
 
-import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
-import edu.upenn.cis350.lostandfoundpenn.R;
+import java.net.URL;
+
 import edu.upenn.cis350.lostandfoundpenn.AccessWebTask;
+import edu.upenn.cis350.lostandfoundpenn.R;
 
-public class ClaimActivity extends AppCompatActivity {
+public class UserReportActivity extends AppCompatActivity {
 
     protected String userID;
     protected String contactInfo;
     protected String itemFeature;
-
+    protected String extraMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(edu.upenn.cis350.lostandfoundpenn.R.layout.activity_claim);
+        setContentView(edu.upenn.cis350.lostandfoundpenn.R.layout.activity_user_report);
     }
 
     private void saveInfo() {
@@ -42,8 +39,11 @@ public class ClaimActivity extends AppCompatActivity {
         EditText ItemFeature = (EditText) findViewById(R.id.ItemFeature);
         itemFeature = ItemFeature.getText().toString();
 
+        EditText ExtraMsg = (EditText) findViewById(R.id.ExtraMsg);
+        extraMsg = ItemFeature.getText().toString();
+
         try {
-            String fullURL = "http://10.0.2.2:3000/claimItem?";
+            String fullURL = "http://10.0.2.2:3000/userReport?";
 
             // concatenate full URL
             fullURL += "name=" + arr[0];
@@ -52,20 +52,12 @@ public class ClaimActivity extends AppCompatActivity {
             fullURL += "&userID=" + userID;
             fullURL += "&contactInfo=" + contactInfo;
             fullURL += "&description=" + itemFeature;
+            fullURL += "&extraMsg" + extraMsg;
             // add user
-
-
-            String url2 = "http://10.0.2.2:3000/updateStatus?name=" + arr[0] +"&location=" + arr[1];
-
-
 
             URL url = new URL(fullURL);
             AccessWebTask task = new AccessWebTask();
             task.execute(url);
-
-            URL updateStatusURL = new URL(url2);
-            AccessWebTask task2 = new AccessWebTask();
-            task2.execute(updateStatusURL);
 
             String resultMessage = task.get();
             Toast.makeText(this, "RESULT: " + resultMessage, Toast.LENGTH_LONG).show();
@@ -79,9 +71,9 @@ public class ClaimActivity extends AppCompatActivity {
 
     }
 
-    public void submit(View view) {
+    public void report(View view) {
 
-        Toast.makeText(this, "Item claimed!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Successfully reported!", Toast.LENGTH_SHORT).show();
         saveInfo();
 
 
@@ -95,7 +87,7 @@ public class ClaimActivity extends AppCompatActivity {
             }
 
             protected void onPostExecute(String input) {
-                ClaimActivity.this.onBackPressed();
+                UserReportActivity.this.onBackPressed();
             }
 
         }.execute();
@@ -104,6 +96,4 @@ public class ClaimActivity extends AppCompatActivity {
 
 
     }
-
-
 }

@@ -21,10 +21,14 @@ import android.widget.SearchView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+import java.util.*;
 
 import edu.upenn.cis350.lostandfoundpenn.Activities.ClaimActivity;
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
+import edu.upenn.cis350.lostandfoundpenn.FetchItem;
 import edu.upenn.cis350.lostandfoundpenn.R;
 import edu.upenn.cis350.lostandfoundpenn.Utils.SearchRVAdapter;
 
@@ -113,25 +117,23 @@ public class SearchFragment extends Fragment {
 
         // TODO
 
+        try{
+            URL url = new URL("http://10.0.2.2:3000/fetchItem?");
+            FetchItem task = new FetchItem();
+            task.execute(url);
+            List<Item> items = task.get();
+            for (int i = 0; i < items.size(); i++) {
+                Item tmp = items.get(i);
+                mItemList.add(tmp);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // fetch list from server and save it into mItemList
 
-        ArrayList<Item> temp = new ArrayList<>();
-        temp.add(new Item("Mac Pro 15", "Towne 100", "waitingFound"));
-        temp.add(new Item("AirPod Pro", "Towne 217", "waitingFound"));
-        temp.add(new Item("Nintendo Switch", "SKIR AUD", "waitingFound"));
-        temp.add(new Item("Chicken Fried Rice", "JMHH 100", "waitingFound"));
-        temp.add(new Item("LG Gram", "MOOR 105", "waitingFound"));
-        temp.add(new Item("GALAXY Note 10", "LEV AUD", "waitingFound"));
-        temp.add(new Item("Super Mario", "SIG LAB", "waitingFound"));
-        temp.add(new Item("Mac AIR 15", "Towne 100", "waitingFound"));
-        temp.add(new Item("AirPod 2", "Towne 217", "waitingFound"));
-        temp.add(new Item("Nintendo GOLD", "SKIR AUD", "waitingFound"));
-        temp.add(new Item("Psy", "JMHH 100", "waitingFound"));
-        temp.add(new Item("IU", "MOOR 105", "waitingFound"));
-        temp.add(new Item("Tae-yeon", "LEV AUD", "waitingFound"));
-        temp.add(new Item("BTS", "SIG LAB", "waitingFound"));
 
-        return temp;
+        return mItemList;
     }
 
     private void updateRecyclerView(Context context, RecyclerView view) {

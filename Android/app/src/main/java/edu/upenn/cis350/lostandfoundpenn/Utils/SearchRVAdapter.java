@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.upenn.cis350.lostandfoundpenn.Activities.ClaimActivity;
+import edu.upenn.cis350.lostandfoundpenn.Activities.UserReportActivity;
 import edu.upenn.cis350.lostandfoundpenn.Data.Item;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.ReportFragment;
 import edu.upenn.cis350.lostandfoundpenn.Fragments.SearchFragment;
@@ -35,7 +37,7 @@ public class SearchRVAdapter
     private ArrayList<Item> mData = null;
     private Context mContext;
 
-    
+
     public SearchRVAdapter(Context context, ArrayList<Item> items) {
         mPermantData.addAll(items);
         mData = items;
@@ -156,22 +158,33 @@ public class SearchRVAdapter
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, ClaimActivity.class);
+
             Item item = mPermantData.get(getAdapterPosition());
+            String[] arr = new String[3];
+            arr[0] = item.getName();
+            arr[1] = item.getLocation();
+            arr[2] = item.getStatus();
             Log.d("Status", item.status);
             if (item.getStatus().equals("waitingFound")) {
-                String[] arr = new String[3];
-                arr[0] = item.getName();
-                arr[1] = item.getLocation();
-                arr[2] = item.getStatus();
+                Intent intent = new Intent(mContext, ClaimActivity.class);
                 intent.putExtra("item", arr);
                 item.status = "waitingClaim";
-                Log.d("Status", item.status);
                 mContext.startActivity(intent);
             }
-            else if (item.status.equals("waitingClaim")) {
+            else if (item.getStatus().equals("waitingClaim")) {
                 Toast.makeText(mContext, "This item is already claimed by another user!",
                         Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(mContext, UserReportActivity.class);
+                Item item1 = mPermantData.get(getAdapterPosition());
+                Log.d("Name", arr[0]);
+                i.putExtra("item", arr);
+                mContext.startActivity(i);
+
+
+
+
+
             }
         }
     }
