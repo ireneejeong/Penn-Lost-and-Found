@@ -158,48 +158,33 @@ public class SearchRVAdapter
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(mContext, ClaimActivity.class);
+
             Item item = mPermantData.get(getAdapterPosition());
+            String[] arr = new String[3];
+            arr[0] = item.getName();
+            arr[1] = item.getLocation();
+            arr[2] = item.getStatus();
             Log.d("Status", item.status);
             if (item.getStatus().equals("waitingFound")) {
-                String[] arr = new String[3];
-                arr[0] = item.getName();
-                arr[1] = item.getLocation();
-                arr[2] = item.getStatus();
+                Intent intent = new Intent(mContext, ClaimActivity.class);
                 intent.putExtra("item", arr);
                 item.status = "waitingClaim";
-                Log.d("Status", item.status);
                 mContext.startActivity(intent);
             }
-            else if (item.status.equals("waitingClaim")) {
+            else if (item.getStatus().equals("waitingClaim")) {
                 Toast.makeText(mContext, "This item is already claimed by another user!",
                         Toast.LENGTH_LONG).show();
 
+                Intent i = new Intent(mContext, UserReportActivity.class);
+                Item item1 = mPermantData.get(getAdapterPosition());
+                Log.d("Name", arr[0]);
+                i.putExtra("item", arr);
+                mContext.startActivity(i);
 
 
 
-                new AsyncTask<String, String, String>() {
-                    protected String doInBackground(String...inputs) {
-                        try {
-                            Thread.sleep(3000);
-                        } catch (Exception e) { }
-                        return null;
-                    }
 
-                    protected void onPostExecute(String input) {
 
-                        Intent i = new Intent(mContext, UserReportActivity.class);
-                        Item item1 = mPermantData.get(getAdapterPosition());
-                        String[] arr = new String[3];
-                        arr[0] = item1.getName();
-                        arr[1] = item1.getLocation();
-                        arr[2] = item1.getStatus();
-                        Log.d("Name", arr[0]);
-                        i.putExtra("item", arr);
-                        mContext.startActivity(i);
-                    }
-
-                }.execute();
             }
         }
     }

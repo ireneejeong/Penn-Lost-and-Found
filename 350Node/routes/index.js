@@ -25,6 +25,7 @@ var Item = require('./Item.js');
 var Admin = require('./Admin.js');
 var User = require('./User.js');
 var Claim = require('./Claim.js');
+var userReport = require('./userReport.js');
 
 /***************************************/
 
@@ -48,6 +49,7 @@ app.use('/addPoints', (req, res) => {
     });
 });
 
+//claiming item
 app.use('/claimItem', (req, res) => {
     var newClaim = new Claim ({
         name: req.query.name,
@@ -73,6 +75,52 @@ app.use('/claimItem', (req, res) => {
                     res.send('Successfully claimed!');
                 }
             });
+        }
+    });
+});
+
+// enable users to send reports when their item is already claimed
+app.use('/userReport', (req, res) => {
+    var newUserReport = new userReport ({
+        name: req.query.name,
+        location: req.query.location,
+        status: req.query.status,
+        userID: req.query.userID,
+        contactInfo: req.query.contactInfo,
+        description: req.query.description,
+        extraMsg: req.query.extraMsg
+
+    });
+
+    userReport.exists ( {name: newUserReport.name}, function(err) {
+        if (err) {
+            res.write('uh oh: ' + err);
+            console.log(err);
+            res.end();
+        } else {
+            newUserReport.save( (err) => {
+                if (err) {
+                    res.send('uh oh: ' + err);
+                }
+                else {
+                    res.send('Successfully reported!');
+                }
+            });
+        }
+    });
+});
+
+//updating item status
+app.use('/updateStatus', (req, res) => {
+    var name = req.query.name;
+    var location = req.query.location;
+
+    Item.findOneAndUpdate( { "title" : name , "location" : location}, { $set: { "isClaimed" : true } }, { new: true }, function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            console.log(result);
+            res.send(result);
         }
     });
 });
@@ -106,6 +154,20 @@ app.use('/adduser', (req, res) => {
     });
 });
 
+// getting lost items from db to show on the search bar
+app.use('/fetchItem', (req, res) => {
+	Item.find( {}, (err, items) => {
+		if (err) {
+			console.log('uh oh' + err);
+		    res.send(err);
+		}
+		else {
+			res.send(items);
+		}
+	});
+});
+
+
 // -- MOBILE --
 app.use('/getuser', (req, res) => {
 	User.findOne( { email: req.query.email}, (err, user) => {
@@ -119,6 +181,8 @@ app.use('/getuser', (req, res) => {
 		}
 	});
 });
+
+
 
 
 // -- WEB -- 

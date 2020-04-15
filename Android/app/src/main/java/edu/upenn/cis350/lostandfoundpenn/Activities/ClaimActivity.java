@@ -54,9 +54,16 @@ public class ClaimActivity extends AppCompatActivity {
             fullURL += "&description=" + itemFeature;
             // add user
 
+            String url2 = "http://10.0.2.2:3000/updateStatus?name=" + arr[0] +"&location=" + arr[1];
+
+
             URL url = new URL(fullURL);
             AccessWebTask task = new AccessWebTask();
             task.execute(url);
+
+            URL updateStatusURL = new URL(url2);
+            AccessWebTask task2 = new AccessWebTask();
+            task2.execute(updateStatusURL);
 
             String resultMessage = task.get();
             Toast.makeText(this, "RESULT: " + resultMessage, Toast.LENGTH_LONG).show();

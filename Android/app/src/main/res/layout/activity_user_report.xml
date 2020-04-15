@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:textSize="25dp"
-            android:text="If your item is already claimed by someone else, report it to the admins!"
+            android:text="If this item is yours, report it to the admins!"
             android:textStyle="bold"/>
 
         <TextView
