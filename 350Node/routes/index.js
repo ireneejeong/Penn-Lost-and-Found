@@ -32,6 +32,7 @@ var userReport = require('./userReport.js');
 // route for adding a new item
 app.get('/addItem', itemDBRoutes.addItem);
 app.get('/showItemsDB', itemDBRoutes.showItemsDB);
+app.get('/showUsersDB', itemDBRoutes.showUsersDB);
 app.get('/removeAll', itemDBRoutes.removeAll);
 
 // add points to user profile
@@ -154,6 +155,28 @@ app.use('/adduser', (req, res) => {
     });
 });
 
+// --MOBILE -- 
+app.use('/editusercontact', (req, res) => {
+	var useremail = req.query.email;
+	var newcontact = req.query.contact;
+	User.findOne( {email: useremail}, (err, user) => {
+		if (err) {
+			res.send('uh oh: ' + err);
+		} else if (!user) {
+			res.send('uh oh: user does not exist');
+		} else {
+			user.contact = newcontact;
+			user.save( (err) => {
+				if (err) {
+					res.send('uh oh: ' + err);
+				} else {
+					res.send('Your contact information updated successfully!');
+				}
+			});
+		}
+	});
+});
+
 // getting lost items from db to show on the search bar
 app.use('/fetchItem', (req, res) => {
 	Item.find( {}, (err, items) => {
@@ -163,6 +186,19 @@ app.use('/fetchItem', (req, res) => {
 		}
 		else {
 			res.send(items);
+		}
+	});
+});
+
+//getting lost items from db to show on the search bar
+app.use('/fetchClaim', (req, res) => {
+	Claim.find( {}, (err, claims) => {
+		if (err) {
+			console.log('uh oh' + err);
+		    res.send(err);
+		}
+		else {
+			res.send(claims);
 		}
 	});
 });
@@ -247,7 +283,7 @@ app.use('/login', (req, res) => {
 
 // WEB MAIN PAGE
 app.use('/main', (req, res) => { res.redirect('/public/main.html'); } );
-app.use('/listOfUsers', (req, res) => { res.redirect('/public/listOfUsers.html'); });
+//app.use('/listOfUsers', (req, res) => { res.redirect('/public/listOfUsers.html'); });
 app.use('/reportedItems', (req, res) => { res.redirect('/public/reportedItems.html'); });
 app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
 

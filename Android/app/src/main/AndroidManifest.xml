@@ -17,6 +17,7 @@
         <activity android:name=".Activities.UserProfile" />
         <activity android:name=".Activities.MainPageActivity" />
         <activity android:name=".Activities.ClaimActivity" />
+        <activity android:name=".Activities.EditProfile"/>
         <activity android:name=".Utils.SearchRVAdapter" />
         <activity android:name=".MainActivity">
             <intent-filter>

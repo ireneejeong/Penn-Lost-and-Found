@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             URL url = new URL("http://10.0.2.2:3000/getuser?email=" + email);
             GetWebTask task = new GetWebTask();
-            task.execute(url);
+            task.execute(url.toString(), "password");
             String pw = task.get();
             return pw;
         }catch (Exception e){

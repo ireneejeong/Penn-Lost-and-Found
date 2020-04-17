@@ -12,4 +12,5 @@
     <!-- SEARCH RECYCLER VIEW ITEM -->
     <string name="itemName">Mac Pro 15</string>
     <string name="itemLoc">Towne 100</string>
+    <string name="itemStatus">Found</string>
 </resources>

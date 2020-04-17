@@ -1,0 +1,25 @@
+!SESSION 2020-04-17 13:39:01.242 -----------------------------------------------
+eclipse.buildId=4.10.0.I20181206-0815
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/elaineyuwonmoon/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/elaineyuwonmoon/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2020-04-17 13:39:18.271
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface.text 2 0 2020-04-17 13:39:21.432
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-04-17 13:54:06.007
+!MESSAGE No repository found at jar:file:/Users/elaineyuwonmoon/Documents/2%20(Fall%202019)/CIS121/hw0-stub-files.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-04-17 13:54:06.019
+!MESSAGE No repository found at jar:file:/Users/elaineyuwonmoon/Downloads/stylechecker.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-04-17 13:54:11.973
+!MESSAGE No repository found at jar:file:/Users/elaineyuwonmoon/Documents/2%20(Fall%202019)/CIS121/CIS121/stylechecker.zip!/.
+
+!ENTRY org.eclipse.jface.text 2 0 2020-04-17 21:13:29.365
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

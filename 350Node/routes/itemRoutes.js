@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // import the Item class from Item.js
 var Item = require('./Item.js')
+var User = require('./User.js')
 
 /***************************************/
 
@@ -80,6 +81,29 @@ var showItemsDB = function(req, res) {
 	});
 }
 
+
+var showUsersDB = function(req, res) {
+	// show all in DB
+	User.find( {}, (err, users) => {
+		if (err) {
+		    res.type('html').status(200);
+		    console.log('uh oh' + err);
+		    res.write(err);
+		}
+		else {
+		    if (users.length == 0) {
+				res.type('html').status(200);
+				res.write('There are no items.');
+				res.end();
+				return;
+		    }
+
+		    res.render('allUsers', { users: users });
+
+		}
+	});
+}
+
 var removeAll = function(req, res) {
 	// remove everything in DB
 	Item.remove( {}, function (err) {
@@ -94,6 +118,7 @@ var removeAll = function(req, res) {
 var routes = {
 	addItem: addItem,
 	showItemsDB: showItemsDB,
+	showUsersDB: showUsersDB,
 	removeAll: removeAll
 };
 

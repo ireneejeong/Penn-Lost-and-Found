@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+/Users/elaineyuwonmoon/Documents/2 (Spring 2020)/CIS350/lnf/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+298005540.index
