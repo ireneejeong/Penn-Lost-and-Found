@@ -1,87 +1,63 @@
- <style type="text/css">
+<!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <meta name="description" content="">
+   <meta name="author" content="">
 
- .editbox {
+   <title>Main Page</title>
 
-        text-weight:bold;
+   <!-- Bootstrap core CSS -->
+   <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-        text-align: center;
+ </head>
 
-        padding: 15px;
+ <body>
 
-        border: 2px solid black;
+ <div class="container">
 
-        background-color: rgb(230, 230, 300);
+   <!-- Static navbar -->
+   <nav class="navbar navbar-default">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">UPENN Lost and Found</a>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Home</a></li>
+           <li><a href="/showUsersDB">List of Users</a></li>
+           <li><a href="/showItemsDB">Registered Items</a></li>
+           <li><a href="/showReportedItemsDB">Reported Items</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="/">Logout</a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div><!--/.container-fluid -->
+   </nav>
 
-        margin-bottom: 5px;
+   <!-- Main component for a primary marketing message or call to action -->
+   <div class="jumbotron">
+     <h1>Welcome!</h1>
+     <p>This is the main page of the web, accessed by the Administrators.</p>
+     <p>
+       <a class="btn btn-lg btn-primary" href="/showUsersDB" role="button">List of Users &raquo;</a>
+     </p>
+     <img src="https://branding.web-resources.upenn.edu/sites/default/files/styles/1200x600_image/public/field/image/UniversityofPennsylvania_FullLogo_RGB_card.png?itok=xBxY13TC"
+          class="img-responsive"
+          width="500" height="600" align="center">
+   </div>
 
-        color: black;
+ </div> <!-- /container -->
 
-    }
-
-.button {
-
-    font-size: 12px;
-
-    width: auto;
-
-    background-color: white;
-
-    color: black;
-
-    padding: 5px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-    border: 1px solid black;
-
-    cursor: pointer;
-
-    position: relative;
-
-    left: 30px;
-
-    }
-
- 
-
-</style>
-
-
-
-<html>
-
-
-
-UPENN LOST&FOUND
-
-<p> 
-
-Main Page!
-
-<p>
-
-
-<a href="/showUsersDB">List of Users</a>
-<br>
-<br>
-<a href="/showItemsDB">All Registered Items</a>
-<br>
-<br>
-<a href="/reportedItems">List of Reported Items</a>
-<br>
-<br>
-<a href="/mapView">Map View of Items</a>
-<br>
-<br>
-<a href="/">Logout</a><br>
-
-
-<form>
-  <input type="button" value="Back" onclick="history.back()">
-</form>
-
-
-
-</html>
+ </body>
+ </html>

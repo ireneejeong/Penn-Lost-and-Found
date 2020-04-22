@@ -1,89 +1,38 @@
-<style type="text/css">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
 
- .editbox {
+    <title>ADMIN LOGIN</title>
 
-        text-weight:bold;
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-        text-align: center;
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
 
-        padding: 15px;
+</head>
 
-        border: 2px solid black;
+<body>
 
-        background-color: rgb(230, 230, 300);
+<div class="container">
+    <h1 align="center">UPENN Lost and Found [ADMIN]</h1>
+</div>
 
-        margin-bottom: 5px;
-
-        color: black;
-
-    }
-
-.button {
-
-    font-size: 12px;
-
-    width: auto;
-
-    background-color: white;
-
-    color: black;
-
-    padding: 5px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-    border: 1px solid black;
-
-    cursor: pointer;
-
-    position: relative;
-
-    left: 55px;
-
-    }
-
- 
-
-</style>
+<div class="container" style="center">
+    <form class="form-signin" action="/login" method="post">
+        <h2 class="form-signin-heading">Please login:</h2>
+        <input type="username" name="name" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+</div> <!-- /container -->
 
 
-
-<html>
-
-
-
-UPENN LOST&FOUND
-
-<p>
-
-
-
-<form action="/login" method="post">
-
-
-
-<input class="editbox" name="name" placeholder="Username">
-
-<p>
-
-<input class="editbox" name="password" placeholder="Password">
-
-<p>
-
-<input class="button" type="submit" value="Login">
-
-
-
-</form>
-
-
-
-New member? <a href="/public/signup.html">Go to sign up</a><br>
-
-
-
-
-
+</body>
 </html>

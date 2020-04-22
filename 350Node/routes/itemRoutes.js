@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // import the Item class from Item.js
 var Item = require('./Item.js')
 var User = require('./User.js')
+var Report = require('./userReport.js')
 
 /***************************************/
 
@@ -75,10 +76,32 @@ var showItemsDB = function(req, res) {
 				return;
 		    }
 
-		    res.render('all', { items: items });
+		    res.render('allItems', { items: items });
 
 		}
 	});
+}
+
+var showReportedItemsDB = function(req, res) {
+    // show all in DB
+    Report.find( {}, (err, reports) => {
+        if (err) {
+            res.type('html').status(200);
+            console.log('uh oh' + err);
+            res.write(err);
+        }
+        else {
+            if (reports.length == 0) {
+                res.type('html').status(200);
+                res.write('There are no reports.');
+                res.end();
+                return;
+            }
+
+            res.render('allReports', { reports: reports });
+
+        }
+    });
 }
 
 
@@ -119,6 +142,7 @@ var routes = {
 	addItem: addItem,
 	showItemsDB: showItemsDB,
 	showUsersDB: showUsersDB,
+	showReportedItemsDB: showReportedItemsDB,
 	removeAll: removeAll
 };
 
