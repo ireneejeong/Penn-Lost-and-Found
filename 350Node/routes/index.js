@@ -34,6 +34,7 @@ app.get('/addItem', itemDBRoutes.addItem);
 app.get('/showItemsDB', itemDBRoutes.showItemsDB);
 app.get('/showUsersDB', itemDBRoutes.showUsersDB);
 app.get('/removeAll', itemDBRoutes.removeAll);
+app.get('/showReportedItemsDB', itemDBRoutes.showReportedItemsDB);
 
 // add points to user profile
 app.use('/addPoints', (req, res) => {
@@ -220,7 +221,6 @@ app.use('/getuser', (req, res) => {
 
 
 
-
 // -- WEB -- 
 app.use('/signup', (req, res) => {
 	
@@ -283,10 +283,7 @@ app.use('/login', (req, res) => {
 
 // WEB MAIN PAGE
 app.use('/main', (req, res) => { res.redirect('/public/main.html'); } );
-//app.use('/listOfUsers', (req, res) => { res.redirect('/public/listOfUsers.html'); });
-app.use('/reportedItems', (req, res) => { res.redirect('/public/reportedItems.html'); });
-app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
-
+//app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
 
 
 
