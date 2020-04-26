@@ -280,6 +280,40 @@ app.use('/login', (req, res) => {
 	});
 });
 
+//Deleting item in web (Admin)
+app.use('/delete', (req, res) => {
+	Item.remove( { title: req.query.title}, (err, item) => {
+		if (err){
+			res.type('html').status(200);
+		    console.log('uh oh' + err);
+		    res.send(err);
+		} else if (!item) {
+			res.type('html').status(200);
+			res.send('Item does not exist');
+		} else {
+			res.redirect('/main');
+		
+		}
+	});
+});
+
+//Removing user in web (Admin)
+app.use('/removeUser', (req, res) => {
+	User.remove( { email: req.query.email}, (err, user) => {
+		if (err){
+			res.type('html').status(200);
+		    console.log('uh oh' + err);
+		    res.send(err);
+		} else if (!user){
+			res.type('html').status(200);
+			res.send('User does not exist');
+		} else {
+			res.redirect('/main');
+			
+
+		}
+	});
+});
 
 // WEB MAIN PAGE
 app.use('/main', (req, res) => { res.redirect('/public/main.html'); } );
