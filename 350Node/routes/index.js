@@ -282,7 +282,7 @@ app.use('/login', (req, res) => {
 
 //Deleting item in web (Admin)
 app.use('/delete', (req, res) => {
-	Item.remove( { title: req.query.title}, (err, item) => {
+	Item.deleteOne( { title: req.query.title}, (err, item) => {
 		if (err){
 			res.type('html').status(200);
 		    console.log('uh oh' + err);
@@ -299,7 +299,7 @@ app.use('/delete', (req, res) => {
 
 //Removing user in web (Admin)
 app.use('/removeUser', (req, res) => {
-	User.remove( { email: req.query.email}, (err, user) => {
+	User.deleteOne( { email: req.query.email}, (err, user) => {
 		if (err){
 			res.type('html').status(200);
 		    console.log('uh oh' + err);
