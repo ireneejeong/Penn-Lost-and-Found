@@ -1,0 +1,92 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <title>Items DB</title>
+
+   <!-- Bootstrap core CSS -->
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="navbar.css" rel="stylesheet">
+
+ </head>
+
+ <body>
+
+ <div class="container">
+
+   <!-- Static navbar -->
+   <nav class="navbar navbar-default">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="/main">UPENN Lost and Found</a>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="/main">Home</a></li>
+           <li><a href="/showUsersDB">List of Users</a></li>
+           <li class="active"><a href="#">Registered Items</a></li>
+           <li><a href="/showReportedItemsDB">Reported Items</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="/">Logout</a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div><!--/.container-fluid -->
+   </nav>
+
+   <!-- Main component for a primary marketing message or call to action -->
+   <div class="jumbotron">
+     <h3>Here are all the registered items:</h3>
+        <table class="table table-striped">
+          <thead class="alert alert-info">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Location</th>
+              <th scope="col">Date</th>
+              <th scope="col">Author</th>
+              <th scope="col">Claimed</th>
+              <th scope="col">Found</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% items.forEach( (item) => { %>
+              <tr>
+                <td><%= item.title %></td>
+                <td><%= item.description %></td>
+                <td><%= item.location %></td>
+                <td><%= item.date %></td>
+                <td><%= item.author %></td>
+                <td><%= item.isClaimed %></td>
+                <td><%= item.isFound %></td>
+              </tr>
+             <% }); %>
+          </tbody>
+
+        </table>
+
+   </div>
+
+ </div> <!-- /container -->
+
+ </body>
+ </html>
+
+
+
+

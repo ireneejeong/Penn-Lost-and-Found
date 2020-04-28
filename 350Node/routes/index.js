@@ -34,6 +34,7 @@ app.get('/addItem', itemDBRoutes.addItem);
 app.get('/showItemsDB', itemDBRoutes.showItemsDB);
 app.get('/showUsersDB', itemDBRoutes.showUsersDB);
 app.get('/removeAll', itemDBRoutes.removeAll);
+app.get('/showReportedItemsDB', itemDBRoutes.showReportedItemsDB);
 
 // add points to user profile
 app.use('/addPoints', (req, res) => {
@@ -220,7 +221,6 @@ app.use('/getuser', (req, res) => {
 
 
 
-
 // -- WEB -- 
 app.use('/signup', (req, res) => {
 	
@@ -280,13 +280,44 @@ app.use('/login', (req, res) => {
 	});
 });
 
+//Deleting item in web (Admin)
+app.use('/delete', (req, res) => {
+	Item.deleteOne( { title: req.query.title}, (err, item) => {
+		if (err){
+			res.type('html').status(200);
+		    console.log('uh oh' + err);
+		    res.send(err);
+		} else if (!item) {
+			res.type('html').status(200);
+			res.send('Item does not exist');
+		} else {
+			res.redirect('/main');
+		
+		}
+	});
+});
+
+//Removing user in web (Admin)
+app.use('/removeUser', (req, res) => {
+	User.deleteOne( { email: req.query.email}, (err, user) => {
+		if (err){
+			res.type('html').status(200);
+		    console.log('uh oh' + err);
+		    res.send(err);
+		} else if (!user){
+			res.type('html').status(200);
+			res.send('User does not exist');
+		} else {
+			res.redirect('/main');
+			
+
+		}
+	});
+});
 
 // WEB MAIN PAGE
 app.use('/main', (req, res) => { res.redirect('/public/main.html'); } );
-//app.use('/listOfUsers', (req, res) => { res.redirect('/public/listOfUsers.html'); });
-app.use('/reportedItems', (req, res) => { res.redirect('/public/reportedItems.html'); });
-app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
-
+//app.use('/mapView', (req, res) => { res.redirect('/public/mapView.html'); });
 
 
 
