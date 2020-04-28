@@ -12,45 +12,76 @@
         android:gravity="top|center">
 
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/logo" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Report a lost item:"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:textSize="20dp"
-            android:text="Report a lost item:" />
+            android:typeface="monospace" />
 
         <EditText
+            android:id="@+id/itemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:hint="What is the item? \n (ex: iPhone X)"
             android:textSize="13dp"
-            android:id="@+id/itemName" />
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <EditText
+            android:id="@+id/itemDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:layout_marginTop="30dp"
             android:hint="Please provide a short description! \n (ex: No case, small screen crack.)"
-            android:id="@+id/itemDescription" />
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <EditText
             android:id="@+id/itemTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="When did you find the item? (YYYY-MM-DD) \n (ex: 2020-03-30)"
-            android:textSize="13dp" />
+            android:layout_marginTop="30dp"
+            android:hint="When did you find the item? \n (YYYY-MM-DD) (ex: 2020-03-30)"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <EditText
+            android:id="@+id/itemLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:layout_marginTop="30dp"
             android:hint="Where did you find the item? \n (ex: Harnwell)"
-            android:id="@+id/itemLocation" />
+            android:textAlignment="center"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <Button
+            android:id="@+id/addItem_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/test"
+            android:layout_marginTop="10dp"
+            android:backgroundTintMode="add"
             android:text="Add Item"
-            android:id="@+id/addItem_btn" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D1DBEF"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
     </LinearLayout>
 

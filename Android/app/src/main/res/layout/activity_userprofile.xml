@@ -16,6 +16,7 @@
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="162dp">
 
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
@@ -26,11 +27,22 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/logo" />
+
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="My Profile"
-            android:textSize="20dp" />
+            android:layout_marginTop="10dp"
+            android:text="My Profile:"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:typeface="monospace" />
 
         <TextView
             android:id="@+id/userID"
@@ -38,7 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="username"
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
 
         <TextView
@@ -47,7 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="contact"
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <TextView
             android:id="@+id/userRank"
@@ -56,29 +70,36 @@
             android:layout_gravity="center_horizontal"
             android:text="Rank"
             android:textColor="@color/colorPrimary"
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <Button
             android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
+            android:background="@drawable/test"
             android:onClick="editInfo"
-            android:text="Edit information"
-            android:textSize="10dp" />
+            android:text=" Edit information "
+            android:textColor="#D3DBEE"
+            android:textSize="10dp"
+            android:typeface="monospace" />
 
         <TextView
             android:id="@+id/reportTextView"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:text="Items I reported: "
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerReportView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:background="@drawable/recyclerbox"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,10 +111,12 @@
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:text="Items I claimed: "
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerClaimView"
+            android:background="@drawable/recyclerbox"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             app:layout_constraintBottom_toBottomOf="parent"

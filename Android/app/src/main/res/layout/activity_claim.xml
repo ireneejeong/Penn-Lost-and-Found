@@ -12,72 +12,87 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/logo" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="left"
-            android:textSize="25dp"
             android:text="Claim your item!"
-            android:textStyle="bold"/>
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:typeface="monospace" />
 
         <TextView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="left"
-            android:textSize="20dp"
             android:text="UserID:"
-            android:textStyle="bold"/>
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <EditText
             android:id="@+id/UserID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:hint="Type in your userID" />
+            android:hint="Type in your userID"
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Contact Info:"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Contact Info:" />
+            android:typeface="monospace" />
 
         <EditText
             android:id="@+id/ContactInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:hint="Provide us with your contact info (phone#/email..etc)" />
+            android:hint="Provide us with your contact info (phone#/email..etc)"
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:text="Describe item feature \n (be specific - color, size, shape...etc)"
+            android:textSize="18dp"
             android:textStyle="bold"
-            android:text="Describe item feature (be specific - color, size, shape...etc)" />
+            android:typeface="monospace" />
 
         <EditText
             android:id="@+id/ItemFeature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:hint="Describe any notable features of your item" />
-
-
-
+            android:hint="Describe any notable features of your item"
+            android:textSize="13dp"
+            android:typeface="monospace" />
 
 
         <Button
             android:id="@+id/claim"
-            android:onClick="submit"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:background="@drawable/test"
+            android:onClick="submit"
+            android:text="Submit"
+            android:textColor="#D1DBEF"
             android:textSize="20dp"
-            android:text = "Submit!" />
+            android:typeface="monospace" />
 
 
 

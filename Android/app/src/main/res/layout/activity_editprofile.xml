@@ -9,46 +9,56 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="15dp"
-            android:text="UPENN LOST&amp;FOUND" />
+            android:background="@drawable/logo" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="15dp"
-            android:text="Edit your contact information:" />
+            android:layout_marginTop="10dp"
+            android:text="Edit your contact information:"
+            android:textSize="20dp"
+            android:typeface="monospace" />
 
         <EditText
             android:id="@+id/editContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:hint="New contact information"
+            android:hint="New contact information (without '-' or space)"
+            android:textAlignment="center"
             android:textSize="13dp"
-            android:textAlignment="center"/>
+            android:typeface="monospace" />
 
         <Button
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Submit"
             android:layout_gravity="center_horizontal"
-            android:onClick="onSubmitButtonClick"/>
+            android:background="@drawable/test"
+            android:onClick="onSubmitButtonClick"
+            android:text="Submit"
+            android:textColor="#B1BDD6"
+            android:typeface="monospace" />
 
         <Button
             android:id="@+id/returnToMyProfile"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
-            android:text="Return to my profile"
-            android:onClick="returnToMyProfile"/>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/test"
+            android:onClick="returnToMyProfile"
+            android:text=" Return to my profile "
+            android:textColor="#C5D2ED"
+            android:textSize="12dp"
+            android:typeface="monospace" />
 
 
     </LinearLayout>
